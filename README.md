@@ -1,5 +1,6 @@
 # fracanim （フラクタルアニメーション）
 見るだけアニメーション<BR>
+![SS](fracanim.png)
 
 # mandelzoom （マンデルブロート）
 複数色対応第一弾<BR>
@@ -9,6 +10,7 @@
 Cキーでグラデカラーに切り替え<BR>
 Gキーでグレーカラーに切り替え<BR>
 1～0キーで深度切り替え<BR>
+![SS](mandelzoom.png)
 
 # juriaanim （ジュリアアニメーション）
 複数色対応第二弾<BR>
