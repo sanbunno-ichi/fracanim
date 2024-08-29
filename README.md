@@ -1,6 +1,8 @@
 # fracanim （フラクタルアニメーション）
 見るだけアニメーション<BR>
 ![SS](fracanim.png)
+## fracanim動作確認
+- [URL](https://sanbunnoichi.web.fc2.com/pyxel/fracanim.html)
 
 # mandelzoom （マンデルブロート）
 複数色対応第一弾<BR>
@@ -14,6 +16,8 @@ Rキーで初期画面にもどる<BR>
 ![SS](mandelzoom.png)
 ![SS](mandelzoom_2C.png)
 ![SS](mandelzoom_2G.png)
+## mandelzoom動作確認
+- [URL](https://sanbunnoichi.web.fc2.com/pyxel/mandelzoom.html)
 
 # juriaanim （ジュリアアニメーション）
 複数色対応第二弾<BR>
@@ -29,3 +33,5 @@ Yキーで縮小<BR>
 <BR>
 計算処理に時間かかるのでマウス以外のキーは触らない方がいいかも<BR>
 ![GIF](juriaanim.gif)
+## juriaanim動作確認
+- [URL](https://sanbunnoichi.web.fc2.com/pyxel/juriaanim.html)
