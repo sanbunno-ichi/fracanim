@@ -1,28 +1,32 @@
+#-----------------------------------------------------------------
 #複数色マンデルブロート描画
 #
-#マウスでカーソル位置を変更して
-#MOUSE_BUTTON_RIGHT	Aボタン（Returnキー）で拡大
-#MOUSE_BUTTON_LEFT	Bボタン（Spaceキー）で縮小
-#Cキーでグラデカラーに切り替え
-#Gキーでグレーカラーに切り替え
-#1～0キーで深度切り替え
-
+#操作方法
+#	マウスでカーソル位置を変更して
+#	マウス右クリックで拡大
+#	マウス左クリックで縮小
+#
+#	Cキーでグラデカラーに切り替え
+#	Gキーでグレーカラーに切り替え
+#
+#	1～9,0キーで深度切り替え
+#
+#	Rキーで初期画面にもどる
+#-----------------------------------------------------------------
 import pyxel
 
-#512x512にしてhtml化してスマホで起動するとOut of memoryといわれた
 SCREEN_WIDTH = 256
 SCREEN_HEIGHT = 256
 
-max_i = 256
+max_i = 0x100
 xmin = -2.0
 xmax = 1.2
 ymin = -1.2
 ymax = 1.2
 pix = [0 for tbl in range(SCREEN_WIDTH * SCREEN_HEIGHT)]
 
-_rgbNum = [0 for tbl in range(3)]
-_rgbNum = []
-
+#-----------------------------------------------------------------
+#計算
 def cal_mbrot():
 	global max_i
 	global xmin
@@ -71,8 +75,8 @@ def cal_mbrot():
 				return
 
 #-----------------------------------------------------------------
-#マウスで任意の位置を選択（拡大）した時の動作
-def zoom_set( is_shift ):
+#マウスで任意の位置を選択（拡大縮小）した時の動作
+def zoom_set( isZoom ):
 	global xmin
 	global xmax
 	global ymin
@@ -82,12 +86,10 @@ def zoom_set( is_shift ):
 	x = pyxel.mouse_x
 	y = pyxel.mouse_y
 
-	#SHIFTキー併用で縮小→is_shift：SHIFTキー押下(1)
-
 	xc = xmin + (xmax - xmin) * x / SCREEN_WIDTH
 	yc = ymin + (ymax - ymin) * y / SCREEN_HEIGHT
 
-	if( is_shift != 0 ):
+	if( isZoom != 0 ):
 		xstep = (xmax - xmin) * 2.0 * 0.5
 		ystep = (ymax - ymin) * 2.0 * 0.5
 	else:
@@ -100,64 +102,30 @@ def zoom_set( is_shift ):
 	ymax = yc + ystep
 
 	cal_mbrot()
-	isChange = True
 
 #-----------------------------------------------------------------
-#入力（キーボード＆ジョイパッド）ON/OFF = 1/0
+#マウスボタン入力
 #-----------------------------------------------------------------
+def getInputML():
+	if pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT):
+		return 1
+	else:
+		return 0
 
-#上
-def getInputUP():
-	if pyxel.btn(pyxel.KEY_UP) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_UP):
+def getInputMR():
+	if pyxel.btnp(pyxel.MOUSE_BUTTON_RIGHT):
 		return 1
 	else:
 		return 0
-#下
-def getInputDOWN():
-	if pyxel.btn(pyxel.KEY_DOWN) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_DOWN):
-		return 1
-	else:
-		return 0
-#左
-def getInputLEFT():
-	if pyxel.btn(pyxel.KEY_LEFT) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_LEFT):
-		return 1
-	else:
-		return 0
-#右
-def getInputRIGHT():
-	if pyxel.btn(pyxel.KEY_RIGHT) or pyxel.btn(pyxel.GAMEPAD1_BUTTON_DPAD_RIGHT):
-		return 1
-	else:
-		return 0
-#button-A（決定）
-def getInputA():
-	if pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT) or pyxel.btnp(pyxel.KEY_RETURN) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
-		return 1
-	else:
-		return 0
-#button-B（キャンセル）
-def getInputB():
-	if pyxel.btnp(pyxel.MOUSE_BUTTON_RIGHT) or pyxel.btnp(pyxel.KEY_SPACE) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_B):
-		return 1
-	else:
-		return 0
-##button-X
-#def getInputX():
-#	if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_X):
-#		return 1
-#	else:
-#		return 0
-##button-Y
-#def getInputY():
-#	if pyxel.btnp(pyxel.GAMEPAD1_BUTTON_Y):
-#		return 1
-#	else:
-#		return 0
 
 #-----------------------------------------------------------------
+#更新
 def update():
 	global max_i
+	global xmin
+	global xmax
+	global ymin
+	global ymax
 
 	#深度変更：キー1,2,3,4,5,6,7,8,9,0
 	if pyxel.btnp( pyxel.KEY_1 ):
@@ -192,30 +160,30 @@ def update():
 		cal_mbrot()
 
 	#拡大縮小
-	if getInputA():
+	if getInputML():
 		zoom_set(0)
-	elif getInputB():
+	elif getInputMR():
 		zoom_set(1)
 
 	#C/Gキーでグラデカラー/グレーカラー切り替え
 	if pyxel.btnp(pyxel.KEY_C):
-		pyxel.load("my_resource.pyxres")
+		pyxel.load("my_resource.pyxres", excl_images=True, excl_tilemaps=True, excl_sounds=True, excl_musics=True)
 		cal_mbrot()
 	elif pyxel.btnp(pyxel.KEY_G):
-		pyxel.load("glaycolor.pyxres")
+		pyxel.load("glaycolor.pyxres", excl_images=True, excl_tilemaps=True, excl_sounds=True, excl_musics=True)
 		cal_mbrot()
 
-#	#Rキーで拡大縮小リセット
-#	elif pyxel.btnp(pyxel.KEY_R):
-#		pyxel.mouse_x = SCREEN_WIDTH/2
-#		pyxel.mouse_y = SCREEN_HEIGHT/2
-#		max_i = 256
-#		xmin = -2.0
-#		xmax = 1.2
-#		ymin = -1.2
-#		ymax = 1.2
-#		cal_mbrot()
+	#Rキーで初期画面にもどる
+	elif pyxel.btnp(pyxel.KEY_R):
+		max_i = 0x100
+		xmin = -2.0
+		xmax = 1.2
+		ymin = -1.2
+		ymax = 1.2
+		cal_mbrot()
 
+#-----------------------------------------------------------------
+#描画
 def draw():
 	pyxel.cls(0)
 	_xp = 0
@@ -226,10 +194,12 @@ def draw():
 
 #-----------------------------------------------------------------
 pyxel.init(SCREEN_WIDTH, SCREEN_HEIGHT, title='mandelzoom')
-#パレットロード（255色）
-pyxel.load("my_resource.pyxres")
+#パレットロード（255色）（空のリソースデータをロードすることでパレットデータを読み込み）
+#「オプションにTrueを指定すると、そのリソースは読み込まれません。」なので不要データを読み込まない。
+pyxel.load("my_resource.pyxres", excl_images=True, excl_tilemaps=True, excl_sounds=True, excl_musics=True)
 #初期画面作成
 cal_mbrot()
 #マウスカーソル表示
 pyxel.mouse( visible = True )
+#実行
 pyxel.run(update, draw)
