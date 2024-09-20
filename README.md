@@ -8,6 +8,8 @@
 　　Gキーでグレーカラーに切り替え<BR>
 　　1～9,0キーで深度切り替え<BR>
 　　Rキーで初期画面にもどる<BR>
+更新履歴  
+2024.09.20 data_ptrによる高速化対応追加  
 <BR>
 Title: Multicolor Mandelbrot drawing  
 How to operate:  
@@ -36,6 +38,8 @@ How to operate:
 　Xキーで拡大<BR>
 　Yキーで縮小<BR>
 　1～9,0キーで深度切り替え<BR>
+更新履歴  
+2024.09.20 data_ptrによる高速化対応追加  
 <BR>
 計算処理に時間かかるのでマウス以外のキーは触らない方がいいかも<BR>
 ![GIF](juriaanim.gif)
