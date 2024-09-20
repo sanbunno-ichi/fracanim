@@ -415,11 +415,15 @@ def update():
 
 def draw():
 	pyxel.cls(0)
-	_xp = 0
-	_yp = 0
-	for _yp in range(SCREEN_HEIGHT):
-		for _xp in range(SCREEN_WIDTH):
-			pyxel.pset(_xp, _yp, pix[_yp * SCREEN_WIDTH + _xp])
+	#_xp = 0
+	#_yp = 0
+	#for _yp in range(SCREEN_HEIGHT):
+	#	for _xp in range(SCREEN_WIDTH):
+	#		pyxel.pset(_xp, _yp, pix[_yp * SCREEN_WIDTH + _xp])
+
+	_scrptr = pyxel.screen.data_ptr()
+	for _i in range(SCREEN_HEIGHT*SCREEN_WIDTH):
+		_scrptr[_i] = pix[_i]
 
 #-----------------------------------------------------------------
 pyxel.init(SCREEN_WIDTH, SCREEN_HEIGHT)
