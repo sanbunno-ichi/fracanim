@@ -38,8 +38,6 @@ How to operate:
 　Return to initial screen with R key  
 
 ![SS](mandelzoom.gif)
-![SS](mandelzoom_2C.png)
-![SS](mandelzoom_2G.png)
 - [mandelzoom動作確認](https://sanbunnoichi.web.fc2.com/pyxel/mandelzoom.html)
 
 # juriaanim
