@@ -1,0 +1,2 @@
+# mandelzoom
+Multicolor Mandelbrot drawing
