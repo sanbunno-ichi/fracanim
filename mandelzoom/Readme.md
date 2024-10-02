@@ -24,6 +24,7 @@ How to operate:
 　Return to initial screen with R key  
 
 ## スクリーンショット
+![SS](mandelzoom.png)
 ![SS](mandelzoom_2C.png)
 ![SS](mandelzoom_2G.png)
 
