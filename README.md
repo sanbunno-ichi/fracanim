@@ -13,6 +13,7 @@
 2024.09.29 スムージング処理組み込み  
            グラデーションカラー追加  
 ![SS](mandelzoom2.png)
+- [mandelzoom2動作確認](https://sanbunnoichi.web.fc2.com/pyxel/mandelzoom2.html)
 
 # mandelzoom
 タイトル：複数色マンデルブロート描画<BR>
