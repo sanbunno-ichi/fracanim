@@ -1,3 +1,6 @@
+## Goto Pyxel Contents
+[Pyxel Contents](https://sanbunnoichi1962.web.fc2.com/pyxel_contents.html)
+
 # mandelzoom2
 タイトル：複数色マンデルブロート描画 ver2.0<BR>
 操作方法：<BR>
@@ -13,7 +16,6 @@
 2024.09.29 スムージング処理組み込み  
            グラデーションカラー追加  
 ![SS](mandelzoom2.png)
-- [mandelzoom2動作確認](https://sanbunnoichi1962.web.fc2.com/pyxel/mandelzoom2.html)
 
 # mandelzoom
 タイトル：複数色マンデルブロート描画<BR>
@@ -39,7 +41,6 @@ How to operate:
 　Return to initial screen with R key  
 
 ![SS](mandelzoom.gif)
-- [mandelzoom動作確認](https://sanbunnoichi1962.web.fc2.com/pyxel/mandelzoom.html)
 
 # juriaanim
 タイトル：複数色ジュリアアニメーション  
@@ -58,10 +59,8 @@ How to operate:
 <BR>
 計算処理に時間かかるのでマウス以外のキーは触らない方がいいかも<BR>
 ![GIF](juriaanim.gif)
-- [juriaanim動作確認](https://sanbunnoichi1962.web.fc2.com/pyxel/juriaanim.html)
 
 # fracanim
 タイトル：フラクタルアニメーション  
 　操作無しの見るだけアニメーション<BR>
 ![SS](fracanim.gif)
-- [fracanim動作確認](https://sanbunnoichi1962.web.fc2.com/pyxel/fracanim.html)
