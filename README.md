@@ -1,5 +1,5 @@
 ## Goto Pyxel Experiment
-[Pyxel Contents](https://sanbunnoichi1962.web.fc2.com/pyxel_experiment.html)
+[Pyxel Experiment](https://sanbunnoichi1962.web.fc2.com/pyxel_experiment.html)
 
 # mandelzoom2
 タイトル：複数色マンデルブロート描画 ver2.0<BR>
