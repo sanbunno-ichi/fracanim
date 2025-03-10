@@ -1,5 +1,5 @@
 ## Goto Pyxel Contents内実験室
-[Pyxel Contents](https://sanbunno-ichi.github.io/PyxelContents/)
+[Pyxel Contents](https://sanbunnoichi1962.web.fc2.com/pyxel_contents.html)
 
 # mandelzoom2
 タイトル：複数色マンデルブロート描画 ver2.0<BR>
