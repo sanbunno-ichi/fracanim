@@ -1,6 +1,23 @@
 ## Goto Pyxel Contents内実験室
 [Pyxel Contents](https://sanbunnoichi1962.web.fc2.com/pyxel_contents.html)
 
+# Deep Mandelbrot
+タイトル：Calculating the deep Mandelbrot by perturbation theory  
+（摂動論による深い位置のマンデルブロートを算出する）  
+ファイル名：pyxel_PT_0320.py / pt.pyxapp  
+
+numbaを使用しているのでhtml化はできません。  
+  
+[Pythonでマンデルブロ集合を美しく描画する(摂動論編)](https://qiita.com/T-STAR/items/2ef76940f181acbc90f8)  
+の実験用コードのPerturbation Theory:SimpleをPyxel化。  
+numbaを使用しても処理時間かかるパターンもあります。  
+  
+表示した座標を取得しても小数値は限界があってより深い場所を見ることはできない。  
+なので公開されている座標をあらかじめ設定しています。  
+Pyxelで見れますというだけのものですが・・・  
+
+![GIF](PT_SimpleBack.gif)
+
 # mandelzoom2
 タイトル：複数色マンデルブロート描画 ver2.0<BR>
 操作方法：<BR>
