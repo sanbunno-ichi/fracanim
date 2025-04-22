@@ -18,7 +18,9 @@ Pyxelで見れますというだけのものですが・・・
   
 下記gifアニメはSIMPLEパターンを倍率72から0まで進めたもの。  
 SIMPLEパターンなら処理はあまりかからない。  
-![GIF](PT_SimpleBack.gif)
+![GIF](PT_SimpleBack.gif)  
+  
+[Deep Mandelbrot Gallery](https://sanbunnoichi1962.web.fc2.com/dm/dm_gallery.html)  
 
 # mandelzoom2
 タイトル：複数色マンデルブロート描画 ver2.0<BR>
